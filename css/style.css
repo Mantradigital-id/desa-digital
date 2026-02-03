@@ -115,7 +115,10 @@ body {
     text-align: center;
   }
 }
-
+/* OPTIONAL: dropdown click */
+.dropdown-menu.show {
+  display: block;
+}
 .header-flex {
   display: flex;
   align-items: center;
