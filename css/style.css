@@ -15,110 +15,7 @@ body {
   color: white;
   padding: 20px 0;
 }
-.nav {
-  display: flex;
-  gap: 20px;
-}
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding-bottom: 4px;
-}
-
-.nav a:hover,
-.nav a.active {
-  border-bottom: 2px solid #bbf7d0;
-}
-
-/* RESPONSIVE NAV */
-@media (max-width: 768px) {
-  .header-flex {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav {
-    justify-content: center;
-  }
-
-/* NAVBAR DROPDOWN */
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 22px;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  position: relative;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 6px 4px;
-  display: block;
-}
-
-/* DROPDOWN */
-.dropdown-menu {
-  position: absolute;
-  top: 36px;
-  left: 0;
-  background: white;
-  min-width: 200px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  display: none;
-  overflow: hidden;
-  z-index: 100;
-}
-
-.dropdown-menu li a {
-  color: #064e3b;
-  padding: 12px 16px;
-}
-
-.dropdown-menu li a:hover {
-  background: #ecfeff;
-}
-
-/* SHOW DROPDOWN (DESKTOP) */
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-/* ACTIVE */
-.menu a.active {
-  border-bottom: 2px solid #bbf7d0;
-}
-
-/* RESPONSIVE (MOBILE) */
-@media (max-width: 768px) {
-  .menu {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    background: #0f766e;
-  }
-
-  .dropdown-menu li a {
-    color: white;
-    text-align: center;
-  }
-}
-/* OPTIONAL: dropdown click */
-.dropdown-menu.show {
-  display: block;
-}
 .header-flex {
   display: flex;
   align-items: center;
@@ -140,12 +37,6 @@ body {
   margin: 4px 0 0;
   font-size: 14px;
   opacity: 0.9;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
 }
 
 /* CONTAINER */
