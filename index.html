@@ -9,10 +9,14 @@
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <h1>Desa Digital</h1>
-    <p>Dashboard Statistik Kependudukan</p>
+<header class="top-header">
+  <div class="container header-flex">
+    <img src="assets/logo-desa.png" class="logo" alt="Logo Desa">
+
+    <div class="title">
+      <h1>Gampong Bantayan Barat</h1>
+      <p>Kecamatan Idi Tunong • Kabupaten Aceh Timur</p>
+    </div>
   </div>
 </header>
 
@@ -37,7 +41,7 @@
   <!-- GRAFIK -->
   <section class="charts">
     <div class="chart-card">
-      <h4>Jenis Kelamin</h4>
+      <h4>Komposisi Jenis Kelamin</h4>
       <canvas id="jkChart"></canvas>
     </div>
 
@@ -47,7 +51,7 @@
     </div>
 
     <div class="chart-card">
-      <h4>Status Penduduk</h4>
+      <h4>Status Kependudukan</h4>
       <canvas id="statusChart"></canvas>
     </div>
   </section>
@@ -55,7 +59,7 @@
 </main>
 
 <footer>
-  <p>© 2026 Desa Digital • Statistik Kependudukan</p>
+  <p>© 2026 Mantra Digital Indonesia</p>
 </footer>
 
 <script src="js/dashboard.js"></script>
