@@ -1,61 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-  <title>Website Desa Digital</title>
+  <meta charset="UTF-8">
+  <title>Dashboard Kependudukan Desa</title>
+
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
-<h1>Statistik Kependudukan Desa</h1>
-<p>Data ditampilkan dalam bentuk grafik</p>
+<header>
+  <div class="container">
+    <h1>Desa Digital</h1>
+    <p>Dashboard Statistik Kependudukan</p>
+  </div>
+</header>
 
-<h3>Total Penduduk: <span id="total"></span></h3>
+<main class="container">
 
-<canvas id="jkChart"></canvas>
-<canvas id="dusunChart"></canvas>
-<canvas id="statusChart"></canvas>
+  <!-- RINGKASAN -->
+  <section class="summary">
+    <div class="card">
+      <h3>Total Penduduk</h3>
+      <span id="total">0</span>
+    </div>
+    <div class="card">
+      <h3>Laki-laki</h3>
+      <span id="totalL">0</span>
+    </div>
+    <div class="card">
+      <h3>Perempuan</h3>
+      <span id="totalP">0</span>
+    </div>
+  </section>
 
-<script>
-const API_URL = "https://script.google.com/macros/s/AKfycbxtj0V0VT_nQ-3HhU1u5uZSoql3O3NITxak6x22irzGzVZQlwWIW5thQIkpOo7ejRGxWg/exec";
+  <!-- GRAFIK -->
+  <section class="charts">
+    <div class="chart-card">
+      <h4>Jenis Kelamin</h4>
+      <canvas id="jkChart"></canvas>
+    </div>
 
-fetch(API_URL)
-  .then(res => res.json())
-  .then(data => {
+    <div class="chart-card">
+      <h4>Jumlah Penduduk per Dusun</h4>
+      <canvas id="dusunChart"></canvas>
+    </div>
 
-    document.getElementById("total").innerText = data.totalPenduduk;
+    <div class="chart-card">
+      <h4>Status Penduduk</h4>
+      <canvas id="statusChart"></canvas>
+    </div>
+  </section>
 
-    new Chart(jkChart, {
-      type: "pie",
-      data: {
-        labels: Object.keys(data.jenisKelamin),
-        datasets: [{
-          data: Object.values(data.jenisKelamin)
-        }]
-      }
-    });
+</main>
 
-    new Chart(dusunChart, {
-      type: "bar",
-      data: {
-        labels: Object.keys(data.dusun),
-        datasets: [{
-          data: Object.values(data.dusun)
-        }]
-      }
-    });
+<footer>
+  <p>© 2026 Desa Digital • Statistik Kependudukan</p>
+</footer>
 
-    new Chart(statusChart, {
-      type: "doughnut",
-      data: {
-        labels: Object.keys(data.status),
-        datasets: [{
-          data: Object.values(data.status)
-        }]
-      }
-    });
-
-  });
-</script>
-
+<script src="js/dashboard.js"></script>
 </body>
 </html>
