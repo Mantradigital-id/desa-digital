@@ -38,6 +38,7 @@ body {
   font-size: 14px;
   opacity: 0.9;
 }
+
 .brand {
   display: flex;
   align-items: center;
@@ -71,7 +72,7 @@ body {
   .nav {
     justify-content: center;
   }
-}
+
 
 /* CONTAINER */
 .container {
