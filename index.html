@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Website Desa Digital</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>Statistik Kependudukan Desa</h1>
+<p>Data ditampilkan dalam bentuk grafik</p>
+
+<h3>Total Penduduk: <span id="total"></span></h3>
+
+<canvas id="jkChart"></canvas>
+<canvas id="dusunChart"></canvas>
+<canvas id="statusChart"></canvas>
+
+<script>
+const API_URL = "https://script.google.com/macros/s/AKfycbxtj0V0VT_nQ-3HhU1u5uZSoql3O3NITxak6x22irzGzVZQlwWIW5thQIkpOo7ejRGxWg/exec";
+
+fetch(API_URL)
+  .then(res => res.json())
+  .then(data => {
+
+    document.getElementById("total").innerText = data.totalPenduduk;
+
+    new Chart(jkChart, {
+      type: "pie",
+      data: {
+        labels: Object.keys(data.jenisKelamin),
+        datasets: [{
+          data: Object.values(data.jenisKelamin)
+        }]
+      }
+    });
+
+    new Chart(dusunChart, {
+      type: "bar",
+      data: {
+        labels: Object.keys(data.dusun),
+        datasets: [{
+          data: Object.values(data.dusun)
+        }]
+      }
+    });
+
+    new Chart(statusChart, {
+      type: "doughnut",
+      data: {
+        labels: Object.keys(data.status),
+        datasets: [{
+          data: Object.values(data.status)
+        }]
+      }
+    });
+
+  });
+</script>
+
+</body>
+</html>
